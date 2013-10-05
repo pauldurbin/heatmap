@@ -23,7 +23,7 @@ module Heatmap
       @clut_image_file = Magick::Image.read(clut_image)[0] if File.exists?(clut_image)
     end      
 
-    def output(filename)
+    def output(filename='')
       @dot_image_file || self.dot_image=DEFAULT_DOT_IMAGE
       @width, @height = self.points_bounds
       @heatmap = Magick::Image.new(@width, @height)
