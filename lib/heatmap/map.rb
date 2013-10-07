@@ -29,7 +29,9 @@ module Heatmap
       @heatmap = Magick::Image.new(@width, @height)
       generate_map
       colorize
-      @heatmap.write(filename)
+      #@heatmap.write(filename)
+      @heatmap.format = 'png'
+      @heatmap.to_blob
     end
         
     protected
